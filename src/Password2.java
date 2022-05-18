@@ -19,11 +19,11 @@ public class Password2 {
 		return getPassword(8);
 	}
  
-	public  String getPassword(int length) {
+	public static  String getPassword(int length) {
 		return getPassword(NUMEROS + MAYUSCULAS + MINUSCULAS, length);
 	}
  
-	public String getPassword(String clave, int longitud) {
+	public static String getPassword(String clave, int longitud) {
 		String contraseña = "";
  
 		for (int i = 0; i < longitud; i++) {
