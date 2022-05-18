@@ -4,7 +4,6 @@ public class Password {
 	private static String contraseña;
 	private static String MAYUSCULAS="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static String minusculas="abcdefghijklmnopqrstuvwxyz";
-	private static String especiales="._*ñÑ";
 	private static String numros = "0123456789";
 	
 	public Password(String contraseña) {
@@ -36,7 +35,7 @@ public class Password {
 		boolean validar = false;
 		
 		for(int i = 0; i < longitud; i++) {
-			if(contraseña.contains(MAYUSCULAS) && contraseña.contains(minusculas) && contraseña.contains(especiales) && contraseña.contains(numros)) {
+			if(contraseña.contains(MAYUSCULAS) && contraseña.contains(minusculas) && contraseña.contains(numros)) {
 				validar = true;
 			}else {
 				validar = false;
