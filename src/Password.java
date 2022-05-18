@@ -1,6 +1,6 @@
 
 public class Password {
-	
+	//borja es un poco tonto
 	private static String contraseña;
 	private static String MAYUSCULAS="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static String minusculas="abcdefghijklmnopqrstuvwxyz";
