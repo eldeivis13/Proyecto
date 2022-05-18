@@ -6,11 +6,6 @@ public class Password {
 	private static String minusculas="abcdefghijklmnopqrstuvwxyz";
 	private static String numros = "0123456789";
 	
-	public Password(String contraseña) {
-		super();
-		this.contraseña = contraseña;
-	}
-
 	public String getContraseña() {
 		return contraseña;
 	}
@@ -19,13 +14,21 @@ public class Password {
 		this.contraseña = contraseña;
 	}
 	
-	public String generarPassword(String clave, int longitud) {
-		String contra = "";
-		int max, min, esp;
+	public String generarPassword(int longitud) {
+		String contra = "", max = "", min = "", num = "";
+		int cont;
 		
 		for(int i = 0; i < longitud; i++) {
-			contra+=(MAYUSCULAS.charAt((int)(Math.random()*MAYUSCULAS.length()))) + (minusculas.charAt((int)(Math.random()*minusculas.length()))) + (numros.charAt((int)(Math.random()*numros.length())));
+			cont = (int)(1 + Math.random()*3);
+			if(cont == 1) {
+				max +=(MAYUSCULAS.charAt((int)(Math.random()*MAYUSCULAS.length())));
+			} else if (cont == 2) {
+				min +=(minusculas.charAt((int)(Math.random()*minusculas.length())));
+			}else if(cont == 3) {
+				num +=(numros.charAt((int)(Math.random()*numros.length())));
+			}
 		}
+		contra = contra.concat(max) + contra.concat(min) + contra.concat(num);
 		
 		return contra;
 	}
@@ -34,8 +37,8 @@ public class Password {
 		int longitud = contraseña.length();
 		boolean validar = false;
 		
-		for(int i = 0; i < longitud; i++) {
-			if(contraseña.contains(MAYUSCULAS) && contraseña.contains(minusculas) && contraseña.contains(numros)) {
+		for(int i = 0; i < contraseña.charAt(i); i++) {
+			if(MAYUSCULAS.indexOf(contraseña.charAt(i),0)!=1) {
 				validar = true;
 			}else {
 				validar = false;

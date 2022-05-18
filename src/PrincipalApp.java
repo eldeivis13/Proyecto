@@ -6,6 +6,16 @@ public class PrincipalApp {
 		
 		System.out.println("# ----- GENERADOR DE CONTRASEÑA ALEATORIA ----- #");
 		System.out.println("Escoge la longitud de tu contraseña: ");
-		String longc = sc.next();
+		int longc = sc.nextInt();
+		
+		Password contraseña = new Password();
+		
+		if(longc < 4) {
+			System.out.println("Introduce una longitud de caracteres correcta");
+		}else {
+			System.out.println(contraseña.generarPassword(longc));
+		}
+		
+		System.out.println(contraseña.passwordValida());
 	}
 }
