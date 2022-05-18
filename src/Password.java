@@ -2,7 +2,11 @@
 public class Password {
 	
 	private static String contraseña;
-
+	private static String MAYUSCULAS="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static String minusculas="abcdefghijklmnopqrstuvwxyz";
+	private static String especiales="._*ñÑ";
+	private static String numros = "0123456789";
+	
 	public Password(String contraseña) {
 		super();
 		this.contraseña = contraseña;
@@ -16,8 +20,30 @@ public class Password {
 		this.contraseña = contraseña;
 	}
 	
-	public static void passwordValida() {
+	public String generarPassword(String clave, int longitud) {
+		String contra = "";
+		int max, min, esp;
+		
+		for(int i = 0; i < longitud; i++) {
+			contra+=(clave.charAt((int)(Math.random()*clave.length())));
+		}
+		
+		return contra;
+	}
+	
+	public boolean passwordValida() {
 		int longitud = contraseña.length();
+		boolean validar = false;
+		
+		for(int i = 0; i < longitud; i++) {
+			if(contraseña.contains(MAYUSCULAS) && contraseña.contains(minusculas) && contraseña.contains(especiales) && contraseña.contains(numros)) {
+				validar = true;
+			}else {
+				validar = false;
+			}
+		}
+		
+		return validar;
 	}
 
 }

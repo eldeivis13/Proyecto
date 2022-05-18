@@ -1,7 +1,5 @@
 
 public class Password2 {
-
-
 	// esto lo copias y lo pegas en el main joseto Password2.getPassword(Password2.MINUSCULAS+Password2.MAYUSCULAS+Password2.ESPECIALES,10);
 	
 	public static String NUMEROS = "0123456789";
@@ -10,7 +8,7 @@ public class Password2 {
  
 	public static String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
  
-	public static String ESPECIALES = "Ò—";
+	public static String ESPECIALES = "._Ò—";
  
 	
 	public static String getPinNumber() {
@@ -21,20 +19,16 @@ public class Password2 {
 		return getPassword(8);
 	}
  
-	public static String getPassword(int length) {
+	public  String getPassword(int length) {
 		return getPassword(NUMEROS + MAYUSCULAS + MINUSCULAS, length);
 	}
  
-	public static String getPassword(String key, int length) {
-		String pswd = "";
+	public String getPassword(String clave, int longitud) {
+		String contraseÒa = "";
  
-		for (int i = 0; i < length; i++) {
-			pswd+=(key.charAt((int)(Math.random() * key.length())));
+		for (int i = 0; i < longitud; i++) {
+			contraseÒa+=(clave.charAt((int)(Math.random() * clave.length())));
 		}
- 
-		return pswd;
-		
-	}
-	
-		
+		return contraseÒa;
+	}	
 }
