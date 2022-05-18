@@ -1,10 +1,10 @@
 
 public class Password2 {
-	
+	// esto lo copias y lo pegas en el main joseto Password2.getPassword(Password2.MINUSCULAS+Password2.MAYUSCULAS+Password2.ESPECIALES,10);
+	private static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
+	private static String ESPECIALES = "._ñÑ";
 	private static String contraseña;
-	private static String MAYUSCULAS="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private static String minusculas="abcdefghijklmnopqrstuvwxyz";
-	private static String numros = "0123456789";
 	
 	public String getContraseña() {
 		return contraseña;
