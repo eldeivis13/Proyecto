@@ -24,7 +24,7 @@ public class Password {
 		int max, min, esp;
 		
 		for(int i = 0; i < longitud; i++) {
-			contra+=(clave.charAt((int)(Math.random()*clave.length())));
+			contra+=(MAYUSCULAS.charAt((int)(Math.random()*MAYUSCULAS.length()))) + (minusculas.charAt((int)(Math.random()*minusculas.length()))) + (numros.charAt((int)(Math.random()*numros.length())));
 		}
 		
 		return contra;
