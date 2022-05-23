@@ -1,16 +1,10 @@
 
-public class Password {
+public class Password2 {
+	private static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
+	private static String ESPECIALES = "._ñÑ";
+	private static String contraseña;
 	
-	private String contraseña;
-	private String MAYUSCULAS="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private String minusculas="abcdefghijklmnopqrstuvwxyz";
-	private String numros = "0123456789";
-	
-	public Password() {
-		super();
-		this.contraseña = contraseña;
-	}
-
 	public String getContraseña() {
 		return contraseña;
 	}
@@ -19,8 +13,8 @@ public class Password {
 		this.contraseña = contraseña;
 	}
 	
-	public String generarPassword(int longitud) {
-		String contra = "", max = "", min = "", num = "";
+	public String generarPassword2(int longitud) {
+		String contra = "", max = "", min = "", esp = "";
 		int cont;
 		
 		for(int i = 0; i < longitud; i++) {
@@ -28,29 +22,29 @@ public class Password {
 			if(cont == 1) {
 				max +=(MAYUSCULAS.charAt((int)(Math.random()*MAYUSCULAS.length())));
 			} else if (cont == 2) {
-				min +=(minusculas.charAt((int)(Math.random()*minusculas.length())));
+				min +=(MINUSCULAS.charAt((int)(Math.random()*MINUSCULAS.length())));
 			}else if(cont == 3) {
-				num +=(numros.charAt((int)(Math.random()*numros.length())));
+				esp +=(ESPECIALES.charAt((int)(Math.random()*ESPECIALES.length())));
 			}
 		}
-		contra = contra.concat(max) + contra.concat(min) + contra.concat(num);
+		contra = contra.concat(max) + contra.concat(min) + contra.concat(esp);
 		
 		return contra;
 	}
 	
-	public boolean passwordValida() {
-        String contraseña = " ";
+	public boolean passwordValida2() {
+		String contraseña = " ";
         boolean valida = false;
 
         char[] cadena_div = contraseña.toCharArray();
 
         int mayus = 0;
         int minus = 0;
-        int numeros = 0;
+        int caracteres = 0;
 
         for (int i = 0; i < cadena_div.length; i++) {
             if (Character.isDigit(cadena_div[i])) {
-                numeros++;
+            	caracteres++;
             }
 
             if (Character.isUpperCase(cadena_div[i])) {
@@ -62,7 +56,7 @@ public class Password {
             }
         }
 
-        if (numeros >= 1 && mayus >= 1 && minus > 2) {
+        if (caracteres >= 1 && mayus >= 1 && minus > 2) {
             valida = true;
         } else {
             valida = false;
@@ -70,5 +64,4 @@ public class Password {
 
         return valida;
 	}
-
 }

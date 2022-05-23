@@ -9,13 +9,20 @@ public class PrincipalApp {
 		int longc = sc.nextInt();
 		
 		Password contraseña = new Password();
+		Password2 contraseña2 = new Password2();
 		
 		if(longc < 4) {
 			System.out.println("Introduce una longitud de caracteres correcta");
 		}else {
 			System.out.println(contraseña.generarPassword(longc));
+			System.out.println(contraseña.passwordValida());
 		}
 		
-		System.out.println(contraseña.passwordValida());
+		if(longc < 4) {
+			System.out.println("Introduce una longitud de caracteres correcta");
+		}else {
+			System.out.println(contraseña2.generarPassword2(longc));
+			System.out.println(contraseña2.passwordValida2());
+		}
 	}
 }
