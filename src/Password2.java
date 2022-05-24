@@ -1,9 +1,9 @@
 
 public class Password2 {
-	private static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private static String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
-	private static String ESPECIALES = "._ñÑ";
-	private static String contraseña;
+	private  String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private  String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
+	private  String ESPECIALES = "._ñÑ";
+	private  String contraseña;
 	
 	public String getContraseña() {
 		return contraseña;
